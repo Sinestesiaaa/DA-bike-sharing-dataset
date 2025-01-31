@@ -24,16 +24,15 @@ Proyek ini bertujuan untuk menganalisis pola penggunaan layanan sepeda berdasark
 - **Streamlit** untuk pembuatan dashboard
 - **Git & GitHub** untuk versi kontrol
 
-## 📂 Struktur Direktori
+## 🚀 Cara Menjalankan Proyek  
 
-📂 bike-sharing-analysis
-│── 📂 dashboard
-│   ├── main_data.csv
-│   ├── dashboard.py
-│── 📂 data
-│   ├── day.csv
-│   ├── hour.csv
-│── 📜 notebook.ipynb
-│── 📜 README.md
-│── 📜 requirements.txt
-│── 📜 url.txt
+### 1️⃣ Clone Repository  
+git clone https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git
+
+### 2️⃣ Install Dependensi
+pip install -r requirements.txt
+
+### 3️⃣ Jalankan Dashboard
+pip install -r requirements.txt
+
+atau akses melalaui
