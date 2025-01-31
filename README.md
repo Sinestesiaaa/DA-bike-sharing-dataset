@@ -34,8 +34,8 @@ git clone https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git
 ```
 pip install -r requirements.txt
 ```
-### 3️⃣ Jalankan Dashboard
+### 3️⃣ Jalankan Dashboard(Lokal)
 ```
-pip install -r requirements.txt
+streamlit run dashboard/dashboard.py
 ```
 atau akses melalaui [Streamlit](https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git).
