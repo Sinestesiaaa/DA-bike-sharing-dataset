@@ -38,4 +38,4 @@ pip install -r requirements.txt
 ```
 streamlit run dashboard/dashboard.py
 ```
-atau akses melalaui [Streamlit](https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git).
+atau akses melalaui [Streamlit](https://da-bike-sharing-dataset-sinestesiaa.streamlit.app/).
