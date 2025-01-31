@@ -27,15 +27,15 @@ Proyek ini bertujuan untuk menganalisis pola penggunaan layanan sepeda berdasark
 ## 🚀 Cara Menjalankan Proyek
 
 ### 1️⃣ Clone Repository
-
+```
 git clone https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git
-
+```
 ### 2️⃣ Install Dependensi
-
+```
 pip install -r requirements.txt
-
+```
 ### 3️⃣ Jalankan Dashboard
-
+```
 pip install -r requirements.txt
-
-atau akses melalaui
+```
+atau akses melalaui [Streamlit](https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git).
