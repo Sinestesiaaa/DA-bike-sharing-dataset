@@ -30,11 +30,18 @@ Proyek ini bertujuan untuk menganalisis pola penggunaan layanan sepeda berdasark
 ```
 git clone https://github.com/Sinestesiaaa/DA-bike-sharing-dataset.git
 ```
-### 2️⃣ Install Dependensi
+### 2️⃣ Buat Virtual Environment (Opsional, tetapi Disarankan)
+Agar dependencies proyek tidak berbenturan dengan sistem, gunakan virtual environment.
+```
+pip install pipenv
+pipenv install
+pipenv shell
+```
+### 3️⃣ Install Dependensi
 ```
 pip install -r requirements.txt
 ```
-### 3️⃣ Jalankan Dashboard(Lokal)
+### 4️⃣ Jalankan Dashboard(Lokal)
 ```
 streamlit run dashboard/dashboard.py
 ```

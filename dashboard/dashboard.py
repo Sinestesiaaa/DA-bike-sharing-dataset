@@ -9,7 +9,6 @@ st.subheader("Dataset: Bike Sharing Dataset")
 st.text("📅 2011/01/01 – 2012/12/31")
 
 # 📌 Load Dataset
-@st.cache_data
 def load_data():
     day_df = pd.read_csv("dashboard/main_data.csv")  # Ganti dengan path dataset Anda
     return day_df
@@ -25,12 +24,17 @@ day_df.reset_index(drop=True, inplace=True)
 min_date, max_date = day_df["dateday"].min(), day_df["dateday"].max()
 
 with st.sidebar:
-    start_date, end_date = st.date_input(
-        "📅 Pilih Rentang Waktu:",
-        min_value=min_date,
-        max_value=max_date,
-        value=[min_date, max_date]
-    )
+    try:
+        start_date, end_date = st.date_input(
+            "📅 Pilih Rentang Waktu:",
+            min_value=min_date,
+            max_value=max_date,
+            value=[min_date, max_date]
+        )
+        # 🔹 Filter dataset berdasarkan rentang tanggal yang dipilih
+        day_df = day_df[(day_df["dateday"] >= str(start_date)) & (day_df["dateday"] <= str(end_date))]
+    except Exception as e:
+        st.warning(f"⚠️ Terjadi kesalahan pada pemilihan tanggal: {e}")
 
 # 🔹 Filter dataset berdasarkan rentang tanggal yang dipilih
 day_df = day_df[(day_df["dateday"] >= str(start_date)) & (day_df["dateday"] <= str(end_date))]
@@ -152,10 +156,11 @@ workingday_comparison = day_df.groupby(["year", "workingday"], observed=False).a
 }).reset_index()
 
 fig, axes = plt.subplots(1, 2, figsize=(12, 6))
+colors = sns.color_palette("Set2", n_colors=2)
 
 for i, year in enumerate(workingday_comparison["year"].unique()):
     data_year = workingday_comparison[workingday_comparison["year"] == year]
-    axes[i].pie(data_year["count"], labels=["Non-Working Day", "Working Day"], autopct='%1.1f%%', startangle=90)
+    axes[i].pie(data_year["count"], labels=["Non-Working Day", "Working Day"], autopct='%1.1f%%', startangle=90, colors=colors)
     axes[i].set_title(f"Penyewaan Sepeda Tahun {year}")
 
 st.pyplot(fig)
